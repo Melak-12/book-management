@@ -4,11 +4,14 @@ import React, { useEffect, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import Loading from '../Loading';
 import { ShoppingCartOutlined } from '@ant-design/icons'
+import { getDatabase, ref, onValue } from "firebase/database";
+import { app } from '../config/firebase';
 
 const Carts = () => {
   const [carts, setCarts] = useState([]);
 
   const [form] = Form.useForm();
+ 
 
   //fetch the books data in the api  and use books instead of books1
   useEffect(() => {

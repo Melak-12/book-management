@@ -5,6 +5,9 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import book11 from '../book1.jpeg'
 import { DeleteOutlined } from '@ant-design/icons'
 import Loading from '../Loading';
+import { analytics, app, firestore } from '../config/firebase';
+import { logEvent } from 'firebase/analytics';
+import { getDatabase } from "firebase/database";
 
 const Books = () => {
 
@@ -14,6 +17,11 @@ const Books = () => {
     const [books, setBooks] = useState([]);
 
     const [form] = Form.useForm();
+
+    
+    //TODO check if the database is connected in your analytics 
+        const database = getDatabase(app);
+        console.warn("database is ,",database)
 
     //fetch the books data in the api  and use books instead of books1
     useEffect(() => {
@@ -90,7 +98,6 @@ const Books = () => {
         }
 
     ]
-
 
     const showModal = (book) => {
         setIsModalOpen(true);
