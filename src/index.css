@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.search-table-outter {
+  /* border:2px solid rgb(20, 108, 101);  */
+  /* width: 700px; */
+  margin: 0 auto;
+}
+/* .hrr{
+    width: 800px;
+  } */
+.search-table {
+  table-layout: fixed;
+  margin: 40px auto 0px auto;
+}
+.search-table-outter,
+td,
+th {
+  /* border-collapse:collapse; */
+}
+
+td {
+  padding: 25px 20px;
+  height: 55px;
+}
+
+.search-table-outter td{
+  /* overflow-x: scroll; */
+  border: 0.2px solid #04ff8223;
+
+}
+th,
+td {
+  /* min-width: 180px; */
+  /* background-color: #852424; */
+}
