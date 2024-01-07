@@ -113,21 +113,21 @@ const Books = () => {
     }
     const deleteBook = async (id) => {
         console.warn('book id to be deleted is', id)
-        // try {
-        //     setLoading(true)
-        //     await axios.delete(`https://localhost/api/books/${id}`).then(response => {
-        //         console.warn('API delete data:', response.data);
-        //         })
-        //         .catch(error => {
-        //             console.error('API Error:', error);
-        //         });
+        try {
+            setLoading(true)
+            await axios.delete(`https://localhost/api/books/${id}`).then(response => {
+                console.warn('API delete data:', response.data);
+            })
+                .catch(error => {
+                    console.error('API Error:', error);
+                });
 
-        // } catch (error) {
-        //     console.error('API Error:', error);
+        } catch (error) {
+            console.error('API Error:', error);
 
-        // } finally {
-        //     setLoading(false)
-        // }
+        } finally {
+            setLoading(false)
+        }
     }
 
     const handleOk = () => {
@@ -150,29 +150,29 @@ const Books = () => {
                 return obj;
             }, {});
 
-        // try {
-        //     setLoading(true)
-        //     await axios.put(`https://localhost/api/books/${selectedBook._id}`, { ...updatedValues }).then(response => {
-        //         console.warn('update books:', response.data);
+        try {
+            setLoading(true)
+            await axios.put(`https://localhost/api/books/${selectedBook._id}`, { ...updatedValues }).then(response => {
+                console.warn('update books:', response.data);
 
 
-        //     })
-        //         .catch(error => {
-        //             console.error('API Error:', error);
-        //         });
+            })
+                .catch(error => {
+                    console.error('API Error:', error);
+                });
 
 
 
-        // } catch (error) {
-        //     console.error('API Error:', error);
+        } catch (error) {
+            console.error('API Error:', error);
 
-        // } finally {
-        //     setSelectedBook(null);
-        //     form.resetFields();
+        } finally {
+            setSelectedBook(null);
+            form.resetFields();
 
-        //     setIsModalOpen(false);
-        //     setLoading(false)
-        // }
+            setIsModalOpen(false);
+            setLoading(false)
+        }
 
 
         console.warn('book id to be updated :', selectedBook.book_id);
@@ -289,6 +289,13 @@ const Books = () => {
                                                         ]}
                                                     >
                                                         <Input defaultValue={book.author} />
+                                                    </Form.Item>
+                                                    <Form.Item
+                                                        label="book image"
+                                                        name="image"
+
+                                                    >
+                                                        <Input defaultValue={book.image} />
                                                     </Form.Item>
 
                                                     <Form.Item
