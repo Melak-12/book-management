@@ -39,6 +39,7 @@ const AddBook = () => {
         console.log('Failed:', errorInfo);
     };
     if (added) {
+            alert("book added successfully !")
     }
 
 
