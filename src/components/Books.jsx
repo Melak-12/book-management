@@ -240,7 +240,7 @@ const Books = () => {
                                             </tr>
                                             <Modal
                                                 title="Update book"
-                                                open={isModalOpen && selectedBook && selectedBook._id === book._id}
+                                                open={isModalOpen && selectedBook && selectedBook.book_id === book.book_id}
                                                 onOk={() => {
                                                     form
                                                         .validateFields()
